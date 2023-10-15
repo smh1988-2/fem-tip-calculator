@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
       rel="stylesheet"
     />
+    <script src="./script.js" type="text/javascript" defer></script>
 
     <title>Tip calculator app</title>
   </head>
@@ -25,49 +26,56 @@
     </header>
 
     <main>
-      <section class="bill-container">
-        <form>
+      <form>
+        <section class="bill-container">
           <label for="bill" class="section-title">Bill</label>
-          <input type="" />
-        </form>
-      </section>
+          <input type="" class="bill-amount" />
+        </section>
 
-      <section class="tip-percent-container">
-        <p class="section-title">Select Tip %</p>
-        <div class="tip-btn-container">
-          <button class="tip-btn">5%</button>
-          <button class="tip-btn">10%</button>
-          <button class="tip-btn">15%</button>
-          <button class="tip-btn">25%</button>
-          <button class="tip-btn">50%</button>
-          <input class="custom-tip-field" placeholder="Custom" />
-        </div>
-      </section>
-
-      <section class="people-container">
-        <label for="bill" class="section-title">Number of People</label>
-        <input type="" />
-      </section>
-
-      <section class="tip-results-container">
-        <div>
-          <div>
-            <p>Tip Amount</p>
-            <p>/ person</p>
+        <section class="tip-percent-container">
+          <p class="section-title">Select Tip %</p>
+          <div class="tip-btn-container">
+            <button class="tip-btn">5%</button>
+            <button class="tip-btn">10%</button>
+            <button class="tip-btn">15%</button>
+            <button class="tip-btn">25%</button>
+            <button class="tip-btn">50%</button>
+            <input class="custom-tip-field" placeholder="Custom" />
           </div>
-          <div>$-.--</div>
-        </div>
+        </section>
 
-        <div>
+        <section class="people-container">
           <div>
-            <p>Total</p>
-            <p>/ person</p>
+            <label for="bill" class="section-title">Number of People</label>
+            <p>Can't be zero</p>
           </div>
-          <div>$-.--</div>
-        </div>
+          <input type="" class="people-amount" />
+        </section>
 
-        <button class="reset-btn">Reset</button>
-      </section>
+        <section class="tip-results-container">
+          <div class="results-inner-container">
+            <div class="results-text-container">
+              <p class="results-heading">Tip Amount</p>
+              <p class="results-subheading">/ person</p>
+            </div>
+            <div>
+              <p class="results-amount">$0.00</p>
+            </div>
+          </div>
+
+          <div class="results-inner-container">
+            <div class="results-text-container">
+              <p class="results-heading">Total</p>
+              <p class="results-subheading">/ person</p>
+            </div>
+            <div>
+              <p class="results-amount">$0.00</p>
+            </div>
+          </div>
+
+          <button class="reset-btn">Reset</button>
+        </section>
+      </form>
     </main>
   </body>
 </html>

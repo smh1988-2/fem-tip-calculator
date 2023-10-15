@@ -96,7 +96,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -110,11 +110,7 @@ nav,
 section {
   display: block;
 }
-body {
-  line-height: 1;
-  background-color: var(--light-gray-cyan);
-  font-family: "Space Mono", monospace;
-}
+
 ol,
 ul {
   list-style: none;
@@ -135,6 +131,12 @@ table {
   border-spacing: 0;
 }
 
+body {
+  line-height: 1;
+  background-color: var(--light-gray-cyan);
+  font-family: "Space Mono", monospace;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -142,7 +144,7 @@ header {
   padding: 32px 0;
 }
 
-main {
+main form {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -155,7 +157,7 @@ main {
   color: var(--dark-gray-cyan);
 }
 
-.bill-container form,
+.bill-container,
 .tip-percent-container,
 .people-container {
   display: flex;
@@ -175,14 +177,25 @@ input {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: 2px solid var(--cyan);
+}
+
+input.error {
+  outline: 2px solid red;
 }
 
 .bill-container input {
-  background: var(--very-light-grayish-cyan) url(./images/icon-dollar.svg) no-repeat scroll 18px 25px;
+  background: var(--very-light-grayish-cyan) url(./images/icon-dollar.svg)
+    no-repeat scroll 18px 25px;
 }
 
 .people-container input {
-  background: var(--very-light-grayish-cyan) url(./images/icon-person.svg) no-repeat scroll 18px 25px;
+  background: var(--very-light-grayish-cyan) url(./images/icon-person.svg)
+    no-repeat scroll 18px 25px;
 }
 
 .tip-btn-container {
@@ -199,9 +212,63 @@ input {
   color: var(--white);
   background-color: var(--dark-cyan);
   font-family: "Space Mono", monospace;
+  transition: color 300ms ease, background-color 300ms ease;
+  cursor: pointer;
+}
+
+.tip-btn:hover,
+.tip-btn.active {
+  color: var(--dark-cyan);
+  background-color: var(--cyan);
 }
 
 .custom-tip-field {
   color: var(--dark-cyan);
   background-color: var(--very-light-grayish-cyan);
+}
+
+.tip-results-container {
+  display: grid;
+  background-color: var(--dark-cyan);
+  border-radius: 6px;
+  padding: 40px 24px;
+  gap: 32px;
+}
+
+.results-inner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.results-heading {
+  color: var(--white);
+  font-size: 16px;
+}
+
+.results-subheading {
+  color: var(--light-gray-cyan);
+  font-size: 14px;
+}
+
+.results-amount {
+  color: var(--cyan);
+  font-size: 28px;
+}
+
+.reset-btn {
+  background-color: var(--cyan);
+  border: none;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  color: var(--dark-cyan);
+  text-transform: uppercase;
 }
