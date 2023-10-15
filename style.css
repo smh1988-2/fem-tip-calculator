@@ -216,8 +216,33 @@ input.error {
   cursor: pointer;
 }
 
+.tip-btn-container input[type="radio"] {
+  display: none;
+}
+
+.tip-btn-container label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  color: var(--white);
+  background-color: var(--dark-cyan);
+  border: none;
+  border-radius: 6px;
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  transition: color 300ms ease, background-color 300ms ease;
+  cursor: pointer;
+}
+
+
+/* #id_work_days input[type="checkbox"]:checked + span {
+  background-color: gold;
+  color: black;
+} */
+
 .tip-btn:hover,
-.tip-btn.active {
+.tip-btn:has(.active) {
   color: var(--dark-cyan);
   background-color: var(--cyan);
 }
