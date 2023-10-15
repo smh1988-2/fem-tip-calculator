@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Tip calculator app</title>
-</head>
-<body>
-  <main>
-<header></header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
-  </main>
+    <title>Tip calculator app</title>
+  </head>
+  <body>
+    <header>
+      <img class="header-logo" src="./images/logo.svg" alt="splitter logo" />
+    </header>
 
-  Bill
+    <main>
+      <section class="bill-container">
+        <form>
+          <label for="bill">Bill</label>
+          <input type="" />
+        </form>
+      </section>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <section class="tip-percent-container">
+        <p>Select Tip %</p>
+        <div class="tip-btn-container">
+          <button class="tip-btn">5%</button>
+          <button class="tip-btn">10%</button>
+          <button class="tip-btn">15%</button>
+          <button class="tip-btn">25%</button>
+          <button class="tip-btn">50%</button>
+          <input placeholder="Custom" />
+        </div>
+      </section>
 
-  Number of People
+      <section class="people-container">
+        <label for="bill">Number of People</label>
+        <input type="" />
+      </section>
 
-  Tip Amount
-  / person
+      <section class="tip-results-container">
+        <div>
+          <div>
+            <p>Tip Amount</p>
+            <p>/ person</p>
+          </div>
+          <div>$-.--</div>
+        </div>
 
-  Total
-  / person
+        <div>
+          <div>
+            <p>Total</p>
+            <p>/ person</p>
+          </div>
+          <div>$-.--</div>
+        </div>
 
-  Reset
-  
-</body>
+        <button class="reset-btn">Reset</button>
+      </section>
+    </main>
+  </body>
 </html>
