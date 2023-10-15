@@ -148,5 +148,60 @@ main {
   gap: 32px;
   background-color: var(--white);
   border-radius: 20px;
-  padding: 24px;
+  padding: 28px;
+}
+
+.section-title {
+  color: var(--dark-gray-cyan);
+}
+
+.bill-container form,
+.tip-percent-container,
+.people-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input {
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  color: var(--dark-cyan);
+  text-align: right;
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.bill-container input {
+  background: var(--very-light-grayish-cyan) url(./images/icon-dollar.svg) no-repeat scroll 18px 25px;
+}
+
+.people-container input {
+  background: var(--very-light-grayish-cyan) url(./images/icon-person.svg) no-repeat scroll 18px 25px;
+}
+
+.tip-btn-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tip-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 24px;
+  color: var(--white);
+  background-color: var(--dark-cyan);
+  font-family: "Space Mono", monospace;
+}
+
+.custom-tip-field {
+  color: var(--dark-cyan);
+  background-color: var(--very-light-grayish-cyan);
 }
