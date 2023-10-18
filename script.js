@@ -1,46 +1,82 @@
 const form = document.querySelector("form");
 const tipButtons = document.querySelectorAll('input[name="tip-value"]');
+const resetBtn = document.querySelector(".reset-btn");
 
-let billAmount;
+const tipPerPerson = document.getElementById("tip-per-person");
+const totalPerPerson = document.getElementById("total-per-person");
+
+const peopleErrorText = document.querySelector(".people-error-text");
+
+let billAmount = document.querySelector(".bill-amount");
 let activeTipAmount;
 let customTip;
 let numOfPeople;
+let actualTip;
+let customTipValue;
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 });
 
-form.addEventListener("change", function (e) {
-  customTipValue = document.querySelector(".custom-tip-field");
-
-  resetTipButtons();
+form.addEventListener("change", function () {
+  customTipValue = document.querySelector(".custom-tip-field").value;
 
   billAmount = Number(document.querySelector(".bill-amount").value);
   numOfPeople = Number(document.querySelector(".people-amount").value);
   activeTipButton = document.querySelector('input[name="tip-value"]:checked');
 
-  let actualTip = .5;
-  
-  if (activeTipButton) {
-    activeTipButton.classList.add("active")
-    customTipValue.value = "Custom"
-    actualTip = activeTipButton.value
+  if (activeTipButton && !customTipValue) {
+    resetTipButtons();
+    activeTipButton.classList.add("active");
+    actualTip = activeTipButton.value;
   } else {
-    actualTip = customTipValue.value;
+    resetTipButtons();
+    if (activeTipButton) {
+      activeTipButton.checked = false;
+    }
+    actualTip = customTipValue / 100;
   }
 
-  console.log("billAmount", billAmount);
-  console.log("customTip", customTip);
-  console.log("numOfPeople", numOfPeople);
-  console.log("actualTip", actualTip);
+  if (numOfPeople === 0) {
+    peopleErrorText.style.display = "block";
+  } else {
+    peopleErrorText.style.display = "none";
+  }
 
-  console.log("tip amount pp", (actualTip / numOfPeople))
-  console.log("total amount pp", ((billAmount + (billAmount * actualTip)) / numOfPeople))
+  if (numOfPeople && billAmount && actualTip) {
+    setResults();
+  }
 });
 
 function resetTipButtons() {
   tipButtons.forEach((btn) => {
     btn.classList.remove("active");
   });
+}
 
+function setResults() {
+  let USDollar = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
+  tipPerPerson.textContent = USDollar.format(
+    (billAmount * actualTip) / numOfPeople
+  );
+
+  totalPerPerson.textContent = USDollar.format(
+    (billAmount + billAmount * actualTip) / numOfPeople
+  );
+}
+
+resetBtn.addEventListener("click", function () {
+  handleResetBtn();
+});
+
+function handleResetBtn() {
+    form.reset()
+    resetTipButtons()
+
+    tipPerPerson.textContent = "$0.00"
+    totalPerPerson.textContent = "$0.00"
 }

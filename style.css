@@ -163,6 +163,7 @@ main form {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin-bottom: 20px;
 }
 
 input {
@@ -235,12 +236,6 @@ input.error {
   cursor: pointer;
 }
 
-
-/* #id_work_days input[type="checkbox"]:checked + span {
-  background-color: gold;
-  color: black;
-} */
-
 .tip-btn:hover,
 .tip-btn:has(.active) {
   color: var(--dark-cyan);
@@ -252,12 +247,28 @@ input.error {
   background-color: var(--very-light-grayish-cyan);
 }
 
+.people-container-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.people-error-text {
+    display: none;
+    color: red
+}
+
 .tip-results-container {
   display: grid;
   background-color: var(--dark-cyan);
   border-radius: 6px;
   padding: 40px 24px;
   gap: 32px;
+}
+
+.tip-results-container > div {
+    display: flex;
+    flex-direction: column;
+    gap: 32px
 }
 
 .results-inner-container {
@@ -296,4 +307,20 @@ input.error {
   font-family: "Space Mono", monospace;
   color: var(--dark-cyan);
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+@media screen and (min-width: 992px) {
+    main form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .tip-results-container {
+        align-content: space-between;
+    }
 }
