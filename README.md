@@ -17,8 +17,6 @@ Users should be able to:
 
 - [Live Site](https://smh1988-2.github.io/fem-tip-calculator/)
 
-## My process
-
 ### Built with
 
 - Semantic HTML5 markup
